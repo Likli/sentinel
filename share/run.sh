@@ -6,21 +6,21 @@ term_handler() {
 }
 trap term_handler SIGTERM
 
-if [ ! -f /sentinel/dash.conf ]; then
+if [ ! -f /sentinel/hcc.conf ]; then
   if [ -z "$RPCUSER" -o -z "$RPCPASSWORD" -o -z "$RPCPORT" ]; then
     echo "When no /sentinel/dash.conf is present, you must at least set RPCUSER, RPCPORT and RPCPASSWORD environment variables"
     exit 1
   fi
 
-  echo "" > /sentinel/dash.conf
+  echo "" > /sentinel/hcc.conf
   if [ -n "$RPCUSER" ]; then
-    echo "rpcuser=${RPCUSER}" >> /sentinel/dash.conf
+    echo "rpcuser=${RPCUSER}" >> /sentinel/hcc.conf
   fi
   if [ -n "$RPCPASSWORD" ]; then
-    echo "rpcpassword=${RPCPASSWORD}" >> /sentinel/dash.conf
+    echo "rpcpassword=${RPCPASSWORD}" >> /sentinel/hcc.conf
   fi
   if [ -n "$RPCPORT" ]; then
-    echo "rpcport=${RPCPORT}" >> /sentinel/dash.conf
+    echo "rpcport=${RPCPORT}" >> /sentinel/hcc.conf
   fi
 fi
 
