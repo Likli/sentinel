@@ -7,7 +7,6 @@ COPY . /sentinel
 COPY sentinel.conf /sentinel/sentinel.conf
 
 RUN cd /sentinel && \
-    rm sentinel.conf && \
     pip install -r requirements.txt
 
 ENV HOME /sentinel
