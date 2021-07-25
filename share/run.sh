@@ -30,7 +30,7 @@ if [ ! -f /sentinel/sentinel.conf ]; then
     exit 1
   fi
 
-  echo "dash_conf=/sentinel/dash.conf" > /sentinel/sentinel.conf
+  echo "dash_conf=/sentinel/hcc.conf" > /sentinel/sentinel.conf
   if [ -n "$RPCHOST" ]; then
     echo "rpchost=${RPCHOST}" >> /sentinel/sentinel.conf
   fi
