@@ -4,7 +4,7 @@ LABEL description="Dockerised Sentinel"
 ENV HOME /sentinel
 WORKDIR /sentinel
 
-COPY sentinel.conf /sentinel/sentinel.conf
+COPY ./sentinel.conf /sentinel/sentinel.conf
 
 RUN cd /sentinel && \
     pip install -r requirements.txt
