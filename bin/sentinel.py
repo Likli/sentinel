@@ -220,6 +220,9 @@ if __name__ == '__main__':
         Transient.set(mutex_key, misc.now(), timeout_seconds)
 
     # locked to this instance -- perform main logic here
+    # dashd = DashDaemon.from_dash_conf(config.dash_conf)
+    # print(dashd.is_synced())
+
     main()
 
     Transient.delete(mutex_key)
