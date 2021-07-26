@@ -13,8 +13,8 @@ fi
 if [ -n "$rpcpassword" ]; then
   echo "rpcpassword=${rpcpassword}" >> /.hcccore/hcc.conf
 fi
-if [ -n "$rpcallowip" ]; then
-  echo "rpcallowip=${rpcallowip}" >> /.hcccore/hcc.conf
+if [ -n "$externalip" ]; then
+  echo "rpcallowip=${externalip}" >> /.hcccore/hcc.conf
 fi
 if [ -n "$addnode" ]; then
   echo "addnode=${addnode}" >> /.hcccore/hcc.conf
