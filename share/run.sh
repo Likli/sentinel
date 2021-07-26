@@ -7,26 +7,26 @@ term_handler() {
 trap term_handler SIGTERM
 
 echo "" > /.hcccore/hcc.conf
-if [ -n "$RPCUSER" ]; then
-  echo "rpcuser=${RPCUSER}" >> /.hcccore/hcc.conf
+if [ -n "$rpcuser" ]; then
+  echo "rpcuser=${rpcuser}" >> /.hcccore/hcc.conf
 fi
-if [ -n "$RPCPASSWORD" ]; then
-  echo "rpcpassword=${RPCPASSWORD}" >> /.hcccore/hcc.conf
+if [ -n "$rpcpassword" ]; then
+  echo "rpcpassword=${rpcpassword}" >> /.hcccore/hcc.conf
 fi
-if [ -n "$RPCALLOWIP" ]; then
-  echo "rpcallowip=${RPCALLOWIP}" >> /.hcccore/hcc.conf
+if [ -n "$rpcallowip" ]; then
+  echo "rpcallowip=${rpcallowip}" >> /.hcccore/hcc.conf
 fi
-if [ -n "$ADDNODE" ]; then
-  echo "addnode=${ADDNODE}" >> /.hcccore/hcc.conf
+if [ -n "$addnode" ]; then
+  echo "addnode=${addnode}" >> /.hcccore/hcc.conf
 fi
-if [ -n "$EXTERNALIP" ]; then
-  echo "externalip=${EXTERNALIP}" >> /.hcccore/hcc.conf
+if [ -n "$externalip" ]; then
+  echo "externalip=${externalip}" >> /.hcccore/hcc.conf
 fi
-if [ -n "$MASTERNODEBLSPRIVKEY" ]; then
-  echo "masternodeblsprivkey=${MASTERNODEBLSPRIVKEY}" >> /.hcccore/hcc.conf
+if [ -n "$masternodeblsprivkey" ]; then
+  echo "masternodeblsprivkey=${masternodeblsprivkey}" >> /.hcccore/hcc.conf
 fi
-if [ -n "$RPCBIND" ]; then
-  echo "masternodeblsprivkey=${MASTERNODEBLSPRIVKEY}" >> /.hcccore/hcc.conf
+if [ -n "$masternodeblsprivkey" ]; then
+  echo "masternodeblsprivkey=${masternodeblsprivkey}" >> /.hcccore/hcc.conf
 fi
 
 if [ ! -f /sentinel/sentinel.conf ]; then
