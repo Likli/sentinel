@@ -37,8 +37,8 @@ fi
 
 echo "" > /sentinel/sentinel.conf
 
-if [ -n "$RPCHOST" ]; then
-  echo "rpchost=${RPCHOST}" >> /sentinel/sentinel.conf
+if [ -n "$rpchost" ]; then
+  echo "rpchost=${rpchost}" >> /sentinel/sentinel.conf
   echo "dash_conf=/.hcccore/hcc.conf" >> /sentinel/sentinel.conf
   echo "network=mainnet" >> /sentinel/sentinel.conf
   echo "db_name=database/sentinel.db" >> /sentinel/sentinel.conf
