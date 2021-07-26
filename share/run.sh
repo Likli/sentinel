@@ -35,7 +35,7 @@ if [ -n "$server" ]; then
   echo "server=${server}" >> /.hcccore/hcc.conf
 fi
 
-echo "" > /sentinel/hcc.conf
+echo "" > /sentinel/sentinel.conf
 
 if [ -n "$RPCHOST" ]; then
   echo "rpchost=${RPCHOST}" >> /sentinel/sentinel.conf
