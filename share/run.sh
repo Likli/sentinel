@@ -6,22 +6,27 @@ term_handler() {
 }
 trap term_handler SIGTERM
 
-if [ ! -f /.hcccore/hcc.conf ]; then
-  if [ -z "$RPCUSER" -o -z "$RPCPASSWORD" -o -z "$RPCPORT" ]; then
-    echo "When no /sentinel/hcc.conf is present, you must at least set RPCUSER, RPCPORT and RPCPASSWORD environment variables"
-    exit 1
-  fi
-
-  echo "" > /.hcccore/hcc.conf
-  if [ -n "$RPCUSER" ]; then
-    echo "rpcuser=${RPCUSER}" >> /.hcccore/hcc.conf
-  fi
-  if [ -n "$RPCPASSWORD" ]; then
-    echo "rpcpassword=${RPCPASSWORD}" >> /.hcccore/hcc.conf
-  fi
-  if [ -n "$RPCPORT" ]; then
-    echo "rpcport=${RPCPORT}" >> /.hcccore/hcc.conf
-  fi
+echo "" > /.hcccore/hcc.conf
+if [ -n "$RPCUSER" ]; then
+  echo "rpcuser=${RPCUSER}" >> /.hcccore/hcc.conf
+fi
+if [ -n "$RPCPASSWORD" ]; then
+  echo "rpcpassword=${RPCPASSWORD}" >> /.hcccore/hcc.conf
+fi
+if [ -n "$RPCALLOWIP" ]; then
+  echo "rpcallowip=${RPCALLOWIP}" >> /.hcccore/hcc.conf
+fi
+if [ -n "$ADDNODE" ]; then
+  echo "addnode=${ADDNODE}" >> /.hcccore/hcc.conf
+fi
+if [ -n "$EXTERNALIP" ]; then
+  echo "externalip=${EXTERNALIP}" >> /.hcccore/hcc.conf
+fi
+if [ -n "$MASTERNODEBLSPRIVKEY" ]; then
+  echo "masternodeblsprivkey=${MASTERNODEBLSPRIVKEY}" >> /.hcccore/hcc.conf
+fi
+if [ -n "$RPCBIND" ]; then
+  echo "masternodeblsprivkey=${MASTERNODEBLSPRIVKEY}" >> /.hcccore/hcc.conf
 fi
 
 if [ ! -f /sentinel/sentinel.conf ]; then
