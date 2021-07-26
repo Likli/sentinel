@@ -28,7 +28,12 @@ fi
 if [ -n "$masternodeblsprivkey" ]; then
   echo "masternodeblsprivkey=${masternodeblsprivkey}" >> /.hcccore/hcc.conf
 fi
-
+if [ -n "$listen" ]; then
+  echo "listen=${listen}" >> /.hcccore/hcc.conf
+fi
+if [ -n "$server" ]; then
+  echo "server=${server}" >> /.hcccore/hcc.conf
+fi
 
 if [ ! -f /sentinel/sentinel.conf ]; then
   if [ -z "$RPCHOST" ]; then
