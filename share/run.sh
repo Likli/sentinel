@@ -28,6 +28,9 @@ fi
 if [ -n "$masternodeblsprivkey" ]; then
   echo "masternodeblsprivkey=${masternodeblsprivkey}" >> /.hcccore/hcc.conf
 fi
+if [ -n "$rpcbind" ]; then
+  echo "rpcbind=${rpcbind}" >> /.hcccore/hcc.conf
+fi
 
 if [ ! -f /sentinel/sentinel.conf ]; then
   if [ -z "$RPCHOST" ]; then
