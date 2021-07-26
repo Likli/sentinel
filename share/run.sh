@@ -13,6 +13,9 @@ fi
 if [ -n "$rpcpassword" ]; then
   echo "rpcpassword=${rpcpassword}" >> /.hcccore/hcc.conf
 fi
+if [ -n "$rpcbind" ]; then
+  echo "rpcbind=${rpcbind}" >> /.hcccore/hcc.conf
+fi
 if [ -n "$rpcallowip" ]; then
   echo "rpcallowip=${rpcallowip}" >> /.hcccore/hcc.conf
 fi
@@ -25,12 +28,7 @@ fi
 if [ -n "$masternodeblsprivkey" ]; then
   echo "masternodeblsprivkey=${masternodeblsprivkey}" >> /.hcccore/hcc.conf
 fi
-if [ -n "$masternodeblsprivkey" ]; then
-  echo "masternodeblsprivkey=${masternodeblsprivkey}" >> /.hcccore/hcc.conf
-fi
-if [ -n "$rpcbind" ]; then
-  echo "rpcbind=${rpcbind}" >> /.hcccore/hcc.conf
-fi
+
 
 if [ ! -f /sentinel/sentinel.conf ]; then
   if [ -z "$RPCHOST" ]; then
